@@ -11,7 +11,7 @@ const Input = () => {
 
     async function fetchData() {
         try {
-            const response = await axios.get("https://st.talkappi.com/service/inquiry?id=17050&lang_cd=ja")
+            const response = await axios.get("https://st.talkappi.com/service/inquiry?id=99990014&lang_cd=ja")
             setData(response.data)
         } catch (error) {
             console.error(error);
@@ -21,14 +21,8 @@ const Input = () => {
     useEffect(() => {
         fetchData();
     }, [])
- 
-    const makeChildren = () => {
-        const data = {
-            descriptionTitle: {
-                title: "title"
-            }
-        }
 
+    const makeChildren = () => {
         return (
             <>
                 <Overview {...data}></Overview>
@@ -37,10 +31,14 @@ const Input = () => {
             </>
         )
     }
+
     return (
-        <div className="page-container">
-            <Inquiry>{makeChildren()}</Inquiry>
-        </div>
+        <>
+            {console.log(data)}
+            <div className="page-container">
+                <Inquiry>{makeChildren()}</Inquiry>
+            </div>
+        </>
     )
 }
 

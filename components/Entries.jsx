@@ -1,3 +1,6 @@
+import Address from "./entries/Address";
+import Email from "./entries/Email";
+import EmailFn from "./entries/functional-rewrite/EmailFn";
 import Sel from "./entries/Sel";
 import Txt from "./entries/Txt"
 
@@ -20,15 +23,19 @@ const Entries = (props) => {
         }
     }
 
-    const entries = props.entries.map((entry) =>
-        // <BaseEntry entry={entry} key={entry.id}></BaseEntry>
+    const entries = props.entries.map((entry) => {
         makeEntries(entry)
+    }
     )
 
     return (
         <div className="entry-container">
-                {entries}
-                <button onClick={handleSubmit}>Submit</button>
+            {entries}
+            <Email></Email>
+            <Address></Address>
+            <p>Functional Here</p>
+            <EmailFn></EmailFn>
+            <button onClick={handleSubmit}>Submit</button>
         </div>
     );
 }

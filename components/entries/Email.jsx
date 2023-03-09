@@ -1,7 +1,7 @@
 import React from 'react';
-import Txt from './Txt';
+import BaseEntry from './BaseEntry';
 
-class Email extends Txt {
+class Email extends BaseEntry {
     constructor(props) {
         super(props);
         this.state = {

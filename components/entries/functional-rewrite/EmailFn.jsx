@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Txt from "../Txt";
 
 function EmailFn() {
     const [email, setEmail] = useState('');
@@ -9,14 +10,20 @@ function EmailFn() {
     };
 
     const handleChange = e => {
-        console.log("change")
+        console.log("Here")
         setEmail(e.target.value);
     };
 
+    const txtProps = {
+        title: "",
+        onChange: handleChange,
+        placeholder: "sample@sample.com",
+        value: email,
+    }
+
     return (
         <>
-            <input className="txt" value={email} placeholder="sample@sample.com" onChange={e => setEmail(e.target.value)}></input>
-            <p>{email}</p>
+            <Txt {...txtProps}></Txt>
             {validate() &&
                 <p className="validation-error">not a valid email format</p>
             }
