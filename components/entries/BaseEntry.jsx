@@ -4,23 +4,29 @@ class BaseEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      show: true
     };
   }
 
   validate() {
+    const data = this.data();
     return true;
   }
 
-  data(value) {
-
+  data() {
+    return { text: "abc" }
   }
 
   hide() {
-
+    this.state.show = false;
   }
 
   show() {
 
+  }
+
+  preview() {
+    const data = this.data();
   }
 
   change() {
@@ -45,12 +51,15 @@ class BaseEntry extends React.Component {
           }
 
         </div>
-        <div className="title-description">{this.props.title_description}</div>
+        <div className="title-description" dangerouslySetInnerHTML={{__html: this.props.title_description}}></div>
         <div className="entry-input">
           {this._render()}
         </div>
         <div className="entry-description">{this.props.description}
         </div>
+        { this.validate() &&
+        <p className="validation-error">こちらは回答必須です。</p>
+        }
       </div>
     )
   }

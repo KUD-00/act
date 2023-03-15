@@ -1,0 +1,30 @@
+.overview-container {
+    border-radius: 12px;
+}
+
+.navigation-container {
+    display: none;
+}
+
+.entry-container {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.entry-warp {
+    background-color: #FFF;
+    padding: 25px 35px 25px 35px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+.entry-warp:first-child {
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 670px) {
+    .page-container {
+        padding: 20px 12px 60px 12px;
+    }
+}

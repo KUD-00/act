@@ -19,6 +19,9 @@ class Address extends BaseEntry{
     handleChange = e => {
     };
 
+    data = () => {
+    };
+
     _render() {
         return (
             <>

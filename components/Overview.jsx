@@ -1,10 +1,12 @@
 import OverviewMenu from "./OverviewMenu";
 import OverviewTitle from "./OverviewTitle";
+import OverviewBanner from "./OverviewBanner";
 
-const Overview = (props) => {
+const Overview = ({title}) => {
     return (
         <div className="overview-container">
-            <OverviewTitle {...props.descriptionTitle}></OverviewTitle>
+            <OverviewTitle title={title}></OverviewTitle>
+            <OverviewBanner></OverviewBanner>
             <OverviewMenu></OverviewMenu>
         </div>
     )

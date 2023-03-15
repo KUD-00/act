@@ -160,7 +160,7 @@ body.using-mouse :focus {
   min-width: 66px;
   width: 66px;
   height: 66px;
-  /* background-image: url(logo.png); */
+  background-image: url(./../image/logo.png);
   background-position: center;
   background-size: 66px;
   border: solid 1px #e3e5e8 !important;

@@ -106,7 +106,6 @@
   background: lightgray;
   border-radius: 4px;
   background-color: #f6f7f9;
-
 }
 
 .entry-input .choice-label p {
@@ -138,6 +137,53 @@
 .flex-item .title {
   margin-bottom: 8px;
 }
+
+.entry-preview {
+  width: 100%;
+  margin-top: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e3e5e8;
+}
+
+.entry-preview .preview-title {
+  opacity: 0.72;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #3d3f45;
+  margin-bottom: 8px;
+}
+
+.entry-preview .preview-answer {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.sub-entry-preview {
+  margin-top: 12px;
+}
+
+.entry-preview-flex {
+  display: flex;
+}
+
+.flex-item-preview {
+  font-size: 1.2rem;
+  font-weight: 400;
+  width: 100%;
+}
+
+.flex-item-preview:first-of-type {
+  margin-right: 16px;
+  border-right: 1px solid #e3e5e8;
+}
+
+.flex-item-preview:last-of-type {
+  border: 0;
+}
+
 
 @media screen and (max-width: 670px) {
   .entry-warp {

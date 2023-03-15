@@ -11,7 +11,7 @@ class Email extends BaseEntry {
 
     validate = () => {
         const result = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.state.email);
-        return !result;
+        return result;
     };
 
     handleChange = e => {
@@ -19,15 +19,28 @@ class Email extends BaseEntry {
     };
 
     data = () => {
-        return this.state.email;
+        return { email: this.state.email };
     }
 
     _render() {
         return (
             <>
-                <input className="txt" value={this.state.email} placeholder="sample@sample.com" onChange={this.handleChange}></input>
-                {this.state.email != "" && this.validate() &&
-                    <p className="validation-error">not a valid email format</p>
+                {this.props.isPreview && this.validate() ? (
+                    <div class="entry-preview">
+                        <div class="preview-title">{this.props.title}</div>
+                        <div class="preview-answer">{this.state.email}</div>
+                    </div>
+                )
+                    : (
+                        <>
+                            {this.props.handleBack()}
+                            <input className="txt" value={this.state.email} placeholder="sample@sample.com"
+                                onChange={this.handleChange}></input>
+                            {this.state.email != "" && !this.validate() &&
+                                <p className="validation-error">not a valid email format</p>
+                            }
+                        </>
+                    )
                 }
             </>
         )

@@ -1,5 +1,5 @@
-import '../../public/styles/page.css'
-import '../../public/styles/entry.css'
+import '../../public/css/page.css'
+import '../../public/css/entry.css'
 
 export default function App({ Component, pageProps }) {
   return (

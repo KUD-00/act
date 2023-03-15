@@ -1,30 +1,33 @@
 import React, { useState } from "react";
 import Txt from "../Txt";
 
-function EmailFn() {
+function AddressFn() {
     const [email, setEmail] = useState('');
 
     const validate = () => {
         const result = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
-        if (!result) return (
-            <p className="validation-error">not a valid email format</p>
-        )
+        return !result
     };
 
     const handleChange = e => {
+        console.log("Here")
         setEmail(e.target.value);
     };
 
     const txtProps = {
         title: "",
-        value: email,
         onChange: handleChange,
         placeholder: "sample@sample.com",
-        validate: validate,
+        value: email,
     }
 
     return (
-        <Txt {...txtProps}></Txt>
+        <>
+            <Txt {...txtProps}></Txt>
+            {validate() &&
+                <p className="validation-error">not a valid email format</p>
+            }
+        </>
     )
 }
-export default EmailFn;
+export default AddressFn;
